@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PersonalTailor</string>
+    <string name="fragment_home_text_view_home">Home</string>
+    <string name="fragment_home_text_view_hot">Hot</string>
+    <string name="fragment_home_text_view_knowledge">Knowledge</string>
+    <string name="fragment_home_text_view_personal">Personal</string>
+    <string name="topUpStr">置顶</string>
+    <string name="titleStr">标题</string>
+    <string name="practicalAdviceOrInformationStr">干活</string>
+</resources>
