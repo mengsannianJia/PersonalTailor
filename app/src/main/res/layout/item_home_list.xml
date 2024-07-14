@@ -1,104 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
-        
+
         <import type="android.view.View"/>
-        
+
         <variable
             name="itemVM"
             type="com.smartlab411.personaltailor.repository.entity.HomeListItemData" />
     </data>
 
-    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
-        <!--    item信息    -->
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_6"
+        app:cardElevation="1dp"
+        app:cardCornerRadius="10dp">
+
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/dp_15"
-            android:layout_marginVertical="@dimen/dp_5"
-            android:gravity="center"
-            android:orientation="horizontal">
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/homeItemTitleImage"
-                android:layout_marginEnd="@dimen/dp_8"
-                android:layout_width="@dimen/dp_30"
-                android:layout_height="@dimen/dp_30"
-                android:background="@drawable/ic_launcher_background"/>
-            <TextView
-                android:id="@+id/homeItemAuthor"
-                tools:text="作者"
-                android:text="@{itemVM.author}"
-                android:textColor="@color/black"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+            android:orientation="vertical">
+            <!--    item信息    -->
 
-            <TextView
-                android:id="@+id/homeItemDate"
-                android:text="@{itemVM.niceDate}"
-                tools:text="2024-04-03 12：09：18"
-                android:textColor="@color/black"
-                android:layout_marginEnd="@dimen/dp_8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/homeItemTopUpBtn"
-                android:visibility="@{itemVM.type==1 ? View.VISIBLE : View.GONE}"
-                android:textColor="@color/purple_700"
-                android:textSize="@dimen/sp_14"
-                android:textStyle="bold"
-                android:text="@string/topUpStr"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
-        <!--    item标题    -->
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/dp_15"
-            android:layout_marginVertical="@dimen/dp_5"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/homeItemTitle"
-                android:text="@{itemVM.title}"
-                tools:text="@string/titleStr"
-                android:textColor="@color/black"
-                android:textSize="@dimen/sp_15"
-                android:textStyle="bold"
-                android:layout_marginHorizontal="@dimen/dp_15"
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
-        <!--    具体文章信息    -->
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/dp_15"
-            android:layout_marginVertical="@dimen/dp_5"
-            android:gravity="center"
-            android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_15"
+                android:layout_marginVertical="@dimen/dp_5"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/homeItemTitleImage"
+                    android:layout_marginEnd="@dimen/dp_8"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:background="@drawable/ic_launcher_background"/>
+                <TextView
+                    android:id="@+id/homeItemAuthor"
+                    tools:text="作者"
+                    android:text="@{itemVM.author}"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/homeItemChapterName"
-                android:text="@{itemVM.chapterName}"
-                tools:text="@string/practicalAdviceOrInformationStr"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/homeItemCollectBtn"
-                android:layout_width="@dimen/dp_30"
-                android:layout_height="@dimen/dp_30"
-                android:layout_marginStart="@dimen/dp_10"
-                android:background="@drawable/img_collect_grey"/>
-        </androidx.appcompat.widget.LinearLayoutCompat>
+                <TextView
+                    android:id="@+id/homeItemDate"
+                    android:text="@{itemVM.niceDate}"
+                    tools:text="2024-04-03 12：09：18"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="@dimen/dp_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+                <TextView
+                    android:id="@+id/homeItemTopUpBtn"
+                    android:visibility="@{itemVM.type==1? View.VISIBLE : View.GONE}"
+                    android:textColor="@color/purple_700"
+                    android:textSize="@dimen/sp_14"
+                    android:textStyle="bold"
+                    android:text="@string/topUpStr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!--    item标题    -->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_15"
+                android:layout_marginVertical="@dimen/dp_5"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/homeItemTitle"
+                    android:text="@{itemVM.title}"
+                    tools:text="@string/titleStr"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_15"
+                    android:textStyle="bold"
+                    android:layout_marginHorizontal="@dimen/dp_15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!--    具体文章信息    -->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_15"
+                android:layout_marginVertical="@dimen/dp_5"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/homeItemChapterName"
+                    android:text="@{itemVM.chapterName}"
+                    tools:text="@string/practicalAdviceOrInformationStr"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/homeItemCollectBtn"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:background="@drawable/img_collect_grey"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
 </layout>

@@ -149,4 +149,7 @@
     <dimen name="dp_500">500dp</dimen>
     <dimen name="dp_1000">1000dp</dimen>
 
+
+    <dimen name="default_top_left_radius">16dp</dimen>
+    <dimen name="default_top_right_radius">16dp</dimen>
 </resources>
